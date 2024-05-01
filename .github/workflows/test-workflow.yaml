@@ -8,8 +8,5 @@ jobs:
   call-update-readme:
     uses: bloominstituteoftechnology/technical-writer/.github/workflows/update-readme.yaml@test
     with:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    secrets:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}   # Ensure this secret is set in your test-action-repo
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}       # Ensure this secret is set in your test-action-repo
