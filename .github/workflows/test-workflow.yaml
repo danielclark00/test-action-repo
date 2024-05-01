@@ -6,7 +6,7 @@ on:
 
 jobs:
   call-update-readme:
-    uses: bloominstituteoftechnology/technical-writer/.github/workflows/update-readme.yaml@main
+    uses: bloominstituteoftechnology/technical-writer/.github/workflows/update-readme.yaml@test
     secrets: inherit
     with:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}   # Ensure this secret is set in your test-action-repo
