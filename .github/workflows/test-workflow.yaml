@@ -5,15 +5,9 @@ on:
     types: [closed]
 
 jobs:
-  test-external-update-readme:
-    runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Invoke External Update README Action
-        uses: bloominstituteoftechnology/technical-writer/.github/workflows/update-readme.yaml@main
-        with:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}  # Ensure this secret is set in your test-action-repo
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      # Ensure this secret is set in your test-action-repo
+  call-update-readme:
+    uses: bloominstituteoftechnology/technical-writer/.github/workflows/update-readme.yaml@test
+    secrets: inherit
+    with:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}   # Ensure this secret is set in your test-action-repo
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}       # Ensure this secret is set in your test-action-repo
